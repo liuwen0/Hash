@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>634.666666666667,1370</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>574.666666666667,1370</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>UpdataWorkItem_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -57,6 +57,16 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="修改Work Item的comment和staus字段&#xA;前提条件:WorkItem详情页已打开&#xA;动作：更新字段" DisplayName="UpdataWorkItem" sap:VirtualizedContainerService.HintSize="476,1305.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -66,7 +76,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'DIV'" sap:VirtualizedContainerService.HintSize="434,1153.33333333333" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="4b370ff4a262dd630fa1d4070a29e611" Selector="&lt;html app='chrome.exe' title='ACME System 1 - Work Items' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'DIV'" sap:VirtualizedContainerService.HintSize="434,1153.33333333333" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="09cf9fa9be4282f1d60a31760b1af8e1" Selector="&lt;html app='chrome.exe' title='ACME System 1 - Work Items' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -103,7 +113,7 @@
                 </ui:CursorPosition>
               </ui:Click.CursorPosition>
               <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="58f35a22-fb2f-4df8-94da-e6d7651d0a32" InformativeScreenshot="ed2bff2f5768f1a236875178b0ae00ae" Selector="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;span&amp;gt;span' isleaf='1' tag='SPAN' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="58f35a22-fb2f-4df8-94da-e6d7651d0a32" InformativeScreenshot="4aaa07adb14e120ff008ca2d4817c5ee" Selector="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;button&amp;gt;span&amp;gt;span' isleaf='1' tag='SPAN' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -125,7 +135,7 @@
                 </ui:CursorPosition>
               </ui:Click.CursorPosition>
               <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0af5afea-2212-44b0-a474-7041168810e0" InformativeScreenshot="6e09611d85a3607f050f36fa7615bb3f" Selector="&lt;webctrl aaname='Completed' tag='A' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0af5afea-2212-44b0-a474-7041168810e0" InformativeScreenshot="ee68ae4f67feb3e05e7f6b4446f8bb8d" Selector="&lt;webctrl aaname='Completed' tag='A' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -147,7 +157,7 @@
                 </ui:CursorPosition>
               </ui:Click.CursorPosition>
               <ui:Click.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8204ab5b-969f-44d6-873c-977f28ec1ee3" InformativeScreenshot="3edc7f9f5fbf601f2e0974fa7bafb5d3" Selector="&lt;webctrl id='buttonUpdate' tag='BUTTON' /&gt;">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8204ab5b-969f-44d6-873c-977f28ec1ee3" InformativeScreenshot="0d3bcb4f02e5d6c9f35e5a4d671c59fc" Selector="&lt;webctrl id='buttonUpdate' tag='BUTTON' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -179,7 +189,7 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="NavigateTo_2" Url="[in_SystemURL]" />
+            <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To" sap:VirtualizedContainerService.HintSize="334,58.6666666666667" sap2010:WorkflowViewState.IdRef="NavigateTo_2" Url="[in_SystemURL + &quot;work-items&quot;]" />
           </Sequence>
         </ActivityAction>
       </ui:BrowserScope.Body>

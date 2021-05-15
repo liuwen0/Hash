@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>516,1356.66666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>638,1356.66666666667</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>System_login_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="52">
@@ -72,10 +72,9 @@
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
       <AssemblyReference>UiPath.Mail</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="使用URL和Credentials作为输入参数去登录System1系统。并且抛出不正确的凭证以及回调SendExceptionEmail&#xA;&#xA;前提：无&#xA;动作：如果凭证正确，打开system1网站&#xA;" DisplayName="System_login" sap:VirtualizedContainerService.HintSize="526,1292" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="使用URL和Credentials作为输入参数去登录System1系统。并且抛出不正确的凭证以及回调SendExceptionEmail&#xA;&#xA;前提：无&#xA;动作：如果凭证正确，打开system1网站&#xA;" DisplayName="System_login" sap:VirtualizedContainerService.HintSize="526,1383.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="username" />
       <Variable x:TypeArguments="ss:SecureString" Name="password" />
@@ -162,19 +161,16 @@
     </ui:OpenBrowser>
     <ui:UiElementExists DisplayName="校验登录之后字段" Exists="[LoginSuccesful]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
       <ui:UiElementExists.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0476b448-d4f3-4df0-90de-dba17fca0a95" InformativeScreenshot="bad88f57e49d453644c4599679384c4b" Selector="&lt;html app='chrome.exe' title='ACME System 1 - Dashboard' /&gt;&lt;webctrl tag='H1' /&gt;">
-          <ui:Target.TimeoutMS>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:Target.TimeoutMS>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="0476b448-d4f3-4df0-90de-dba17fca0a95" InformativeScreenshot="bad88f57e49d453644c4599679384c4b" Selector="&lt;html app='chrome.exe' title='ACME System 1 - Dashboard' /&gt;&lt;webctrl tag='H1' /&gt;" TimeoutMS="5000">
           <ui:Target.WaitForReady>
             <InArgument x:TypeArguments="ui:WaitForReady" />
           </ui:Target.WaitForReady>
         </ui:Target>
       </ui:UiElementExists.Target>
     </ui:UiElementExists>
-    <If Condition="[not LoginSuccesful]" DisplayName="判断登录是否失败" sap:VirtualizedContainerService.HintSize="484,449.333333333333" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[not LoginSuccesful]" DisplayName="判断登录是否失败" sap:VirtualizedContainerService.HintSize="484,540.666666666667" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
-        <Sequence DisplayName="登陆失败处理" sap:VirtualizedContainerService.HintSize="376,267.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence DisplayName="登陆失败处理" sap:VirtualizedContainerService.HintSize="376,358.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -182,24 +178,18 @@
           </sap:WorkflowViewStateService.ViewState>
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="发送异常邮件" sap:VirtualizedContainerService.HintSize="334,113.333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="System1\SendEmail.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="x:String" x:Key="in_SendEmail_Credentials">
-                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_SendEmail_Credential" />
-              </InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">
-                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Nothing" />
-              </InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_Body">
-                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="&quot;Hello,The username Or the email Is incorrect. Please check And restart Thank you“" />
-              </InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_DistinationAddress">
-                <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_DistinationAddress" />
-              </InArgument>
-              <InArgument x:TypeArguments="x:String" x:Key="in_Subject">
-                <Literal x:TypeArguments="x:String">Error occurred</Literal>
-              </InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_SendEmail_Credentials">[in_SendEmail_Credential]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_FilePath">[Nothing]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Body">["Hello,The username Or the email Is incorrect. Please check And restart Thank you“]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_DistinationAddress">[in_DistinationAddress]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="in_Subject">Error occurred</InArgument>
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <Throw Exception="[new Exception(&quot;登录凭证不正确&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke KillAllProcesses workflow" sap:VirtualizedContainerService.HintSize="334,113.333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Framework\KillAllProcesses.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <scg:Dictionary x:TypeArguments="x:String, Argument" />
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
         </Sequence>
       </If.Then>
     </If>
